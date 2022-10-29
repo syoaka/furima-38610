@@ -25,11 +25,11 @@
 | name                | string     | null: false                    |
 | text                | text       | null: false                    |
 | category_id         | integer    | null: false                    |
+| condition_id        | integer    | null: false                    |
 | pay_for_shipping_id | integer    | null: false                    |
 | prefecture_id       | integer    | null: false                    |
 | shipping_day_id     | integer    | null: false                    |
 | price               | integer    | null: false                    |
-| image               | string     | null: false                    |
 | user                | references | null: false, foreign_key: true |
 
 ### Association
@@ -39,10 +39,10 @@
 
 ## orders テーブル
 
-| Column   | Type       | Options                        |
-| -------- | ---------- | ------------------------------ |
-| user     | references | null: false, foreign_key: true |
-| items    | references | null: false, foreign_key: true |
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| user    | references | null: false, foreign_key: true |
+| item    | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -60,6 +60,7 @@
 | address1      | string     | null: false                    |
 | address2      | string     |                                |
 | telephone     | string     | null: false                    |
+| order         | references | null: false, foreign_key: true |
 
 ### Association
 
