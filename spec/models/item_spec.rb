@@ -78,10 +78,9 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include('User must exist')
       end
       it '商品画像が空では登録できない' do
-        item = FactoryBot.build(:item)
-        item.image = nil
-        item.valid?
-        expect(item.errors.full_messages).to include("Image can't be blank")
+        @item.image = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Image can't be blank")
       end
     end
   end
