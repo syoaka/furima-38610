@@ -17,10 +17,11 @@ class Item < ApplicationRecord
     validates :pay_for_shipping_id
     validates :prefecture_id
     validates :shipping_day_id
+    validates :image
   end
 
   validates :price, presence: true, numericality: 
-  { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 },format: { with: /\A[0-9]+\z/ }
+  { only_integer: true ,greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 },format: { with: /\A[0-9]+\z/ }
   
   validates :category_id,         numericality: { other_than: 1 , message: "can't be blank"}
   validates :condition_id,        numericality: { other_than: 1 , message: "can't be blank"}
