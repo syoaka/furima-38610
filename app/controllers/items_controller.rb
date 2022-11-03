@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_tweet, only: [:show, :edit, :show]
+  before_action :set_tweet, only: [:show, :edit, :update]
 
   def index
     @items = Item.all.order("created_at DESC")
