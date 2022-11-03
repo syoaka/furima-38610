@@ -40,10 +40,8 @@ class ItemsController < ApplicationController
       item = Item.find(params[:id])
       if item.user == current_user
         item.destroy
-        redirect_to root_path
-      else
-        render :edit
       end
+      redirect_to root_path
     end
 
   private
