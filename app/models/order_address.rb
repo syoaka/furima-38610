@@ -1,6 +1,6 @@
 class OrderAddress
   include ActiveModel::Model
-  attr_accessor :number, :exp_month, :exp_year, :cvc, :post_code, :prefecture_id, :city, :address1, :address2, :telephone, :order_id, :user_id, :item_id
+  attr_accessor :number, :exp_month, :exp_year, :cvc, :post_code, :prefecture_id, :city, :address1, :address2, :telephone, :order_id, :user_id, :item_id, :token
  
   with_options presence: true do
     validates :post_code, format: { with: /\A\d{3}[-]\d{4}\z/ }
@@ -10,6 +10,7 @@ class OrderAddress
     validates :telephone, format: { with: /\A\d{11}\z/ }
     validates :user_id
     validates :item_id
+    validates :token
   end
 
 
